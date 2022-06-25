@@ -1,0 +1,64 @@
+GET http://localhost:8082/api/user/2
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzc3MiLCJpYXQiOjE1OTM3NzM4NTUsImV4cCI6MTU5MzgwOTg1NX0.YazsCFTllJ5dw4btnhFL6L02xzWH0botzV2mSyYSt74o351_plr4wYZpIEeLhbAj084if5KRTZsvPA3JlFS72w
+
+
+
+
+###
+POST http://localhost:8082/api/cart
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzc3MiLCJpYXQiOjE1OTM3NzM4NTUsImV4cCI6MTU5MzgwOTg1NX0.YazsCFTllJ5dw4btnhFL6L02xzWH0botzV2mSyYSt74o351_plr4wYZpIEeLhbAj084if5KRTZsvPA3JlFS72w
+Access-Control-Request-Headers: Authorization, Content-Type
+
+
+{
+  "userId": 4,
+  "dishId": 1
+}
+
+###
+POST http://localhost:8082/api/order
+Content-Type: application/json
+
+{
+  "userId": 4
+}
+
+###
+
+POST http://localhost:8082/api/user
+Content-Type: application/json
+
+{
+  "mail": "@@@@2"
+}
+
+###
+GET http://localhost:8082/api/cart/4
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJzc3MiLCJpYXQiOjE1OTM3NzM4NTUsImV4cCI6MTU5MzgwOTg1NX0.YazsCFTllJ5dw4btnhFL6L02xzWH0botzV2mSyYSt74o351_plr4wYZpIEeLhbAj084if5KRTZsvPA3JlFS72w
+
+
+###
+POST http://localhost:8082/api/dish
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZW1haWwiOiJhYWEiLCJpYXQiOjE1OTM4NTYwODcsImV4cCI6MTU5Mzg5MjA4N30.DhaeltrlbYg1NvKBDOKR183tq54kXyBt0ifhgp2M6Q-StP0Lg0w3FKYy_IF9O5yKwHd2UYcC_r1YvQOMku_boA
+
+{
+  "name": "Лапша",
+  "description": "Вкусная Лапша"
+}
+
+###
+
+###
+POST http://localhost:9000/login
+Content-Type: application/json
+
+{
+  "email": "Лапша",
+  "password": "Вкусная Лапша"
+}
+
+###

@@ -1,0 +1,761 @@
+{
+	"info": {
+		"_postman_id": "caf813b7-5a2c-4738-86b0-e41180297eb9",
+		"name": "Testing REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Adding new city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1bfba4ae-df5a-4b87-8133-517b392d0b45",
+						"exec": [
+							"pm.test(\"Successfull\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"NEW CITY\",\n    \"status\": \"NOT_SERVED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding new city with incorrect status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc1fa248-1722-4a88-b56a-556e9dd62c9e",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dublin\",\n    \"status\": \"INCORRECT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting a city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bdfd9b38-155f-41b2-a403-efe4b783ee20",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/cities/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting a nonexistent city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65628b6e-1a69-4719-bc79-7e21de0b0c05",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/cities/100",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update city status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc89d241-492e-4cc5-b09e-1873c06263b2",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"SERVED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update city name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55a4df3f-d63b-4ec4-9458-940bacfaccec",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Updated name\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update city status and name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e9db72f-f825-4f57-a9d0-f264d346bb7a",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Tokio\",\n    \"status\": \"NOT_SERVED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update city incorrect status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e560cb9-2b76-4336-b03d-9a76fd838509",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"INCORRECT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update  a nonexistent city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3ff38489-70a0-42c0-980b-eea0614c4520",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"SERVED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/cities/100",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "city removal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "01925d24-c86e-4f72-82af-e8318df23ea3",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/cities/15",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nonexistent city removal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "32dc6014-c87d-47ad-a10a-3cc8afa1c1ee",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/cities/100",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"cities",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding new customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c4bb23f-55bb-4a61-adff-8f733fc8ced6",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lastName\": \"Zaydullinnn\",\n    \"firstName\": \"Samat\",\n    \"email\": \"samat.zay@mail.ru\",\n    \"cityId\": \"5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding new customer with nonexistent city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9061b13-d5c9-49d0-a110-86da4f36cb60",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lastName\": \"Zaydullinnn\",\n    \"firstName\": \"Samat\",\n    \"email\": \"samat.zay@mail.ru\",\n    \"cityId\": \"100\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting a customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44311f58-10a5-4b29-a0cb-33b617599451",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/customers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting a nonexistent customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "958277f5-2deb-45eb-8c87-ef879ef8cedc",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/customers/100",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Full updating a customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05ae442d-8566-4334-9de7-eeb6116d0d6d",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lastName\": \"Zaydullin\",\n    \"firstName\": \"Samat\",\n    \"email\": \"samat.zay@mail.ru\",\n    \"cityId\": \"5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/customers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partical updating a customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cityId\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/customers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a customer with nonexistent city",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a042cfae-32d0-481b-a3d9-df5c45a3f1e5",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lastName\": \"Zaydullin\",\n    \"firstName\": \"Samat\",\n    \"cityId\": \"100\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/customers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer removal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e068812b-c292-446d-bf06-b4c898c04203",
+						"exec": [
+							"pm.test(\"Successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/customers/8",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nonexistent customer removal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39c20b17-32f2-48a3-8b75-358075b6179f",
+						"exec": [
+							"pm.test(\"Fail\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/customers/100",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"customers",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,629 @@
+{
+	"id": "3f525b76-e131-48f4-9cac-e6f5618112b8",
+	"name": "Testing REST",
+	"timestamp": "2020-06-25T13:34:52.184Z",
+	"collection_id": "caf813b7-5a2c-4738-86b0-e41180297eb9",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 19,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "56b2d2a0-4dbe-4009-8d24-99c186f8fe7f",
+			"name": "Adding new city",
+			"url": "http://localhost:9000/cities",
+			"time": 51,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successfull": true
+			},
+			"testPassFailCounts": {
+				"Successfull": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				51
+			],
+			"allTests": [
+				{
+					"Successfull": true
+				}
+			]
+		},
+		{
+			"id": "983dd6b9-8184-4327-ba0c-535393853a6e",
+			"name": "Adding new city with incorrect status",
+			"url": "http://localhost:9000/cities",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "b5012be0-8806-4b89-83f7-29ec7d4490be",
+			"name": "getting a city",
+			"url": "http://localhost:9000/cities/8",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "b791d78f-883f-4e81-97fe-9cf4cb2041c3",
+			"name": "getting a nonexistent city",
+			"url": "http://localhost:9000/cities/100",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "5cd9cc9d-71dc-49f7-85cd-da944522113d",
+			"name": "update city status",
+			"url": "http://localhost:9000/cities/8",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				52
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "2356eaf6-8ef1-4aa0-b4ec-8c52c2572b1e",
+			"name": "update city name",
+			"url": "http://localhost:9000/cities/8",
+			"time": 211,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				211
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "5002354e-e5a7-4ab2-a917-73c179c3fa67",
+			"name": "update city status and name",
+			"url": "http://localhost:9000/cities/8",
+			"time": 58,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				58
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "a694389d-952f-4199-bd14-64e979d9efe3",
+			"name": "update city incorrect status",
+			"url": "http://localhost:9000/cities/8",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "be0a230c-c8c7-4682-ad1c-e15f465e0a75",
+			"name": "update  a nonexistent city",
+			"url": "http://localhost:9000/cities/100",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "a2fed821-a1b3-4a60-802c-030a4dbc900f",
+			"name": "city removal",
+			"url": "http://localhost:9000/cities/15",
+			"time": 49,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				49
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "5c2f8188-9ea9-4420-a44d-472c97022811",
+			"name": "nonexistent city removal",
+			"url": "http://localhost:9000/cities/100",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "ded69c71-b938-41ce-8e82-da8bb533bff3",
+			"name": "Adding new customer",
+			"url": "http://localhost:9000/customers",
+			"time": 45,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				45
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "5f3423bd-f803-4959-8880-c2fbf603f3aa",
+			"name": "Adding new customer with nonexistent city",
+			"url": "http://localhost:9000/customers",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "ea6b55d4-b771-400d-99ae-d00bf46c69df",
+			"name": "Getting a customer",
+			"url": "http://localhost:9000/customers/1",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "7058da9e-ad15-41e5-9442-0a06066c6e6b",
+			"name": "Getting a nonexistent customer",
+			"url": "http://localhost:9000/customers/100",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "632f3d32-8eff-4793-a7e7-9c82de8c3211",
+			"name": "Full updating a customer",
+			"url": "http://localhost:9000/customers/1",
+			"time": 48,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				48
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "b1132dac-7f11-4784-9045-311fa3b0a388",
+			"name": "Partical updating a customer",
+			"url": "http://localhost:9000/customers/1",
+			"time": 41,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				41
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8af601ad-c32e-4504-a45d-1f3a9c8dd31a",
+			"name": "Updating a customer with nonexistent city",
+			"url": "http://localhost:9000/customers/1",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		},
+		{
+			"id": "238dfcf0-c0a7-4815-9e24-f326bdd9d72f",
+			"name": "customer removal",
+			"url": "http://localhost:9000/customers/8",
+			"time": 54,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful": true
+			},
+			"testPassFailCounts": {
+				"Successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				54
+			],
+			"allTests": [
+				{
+					"Successful": true
+				}
+			]
+		},
+		{
+			"id": "6e0171bd-2571-43d6-a151-30d62d770878",
+			"name": "nonexistent customer removal",
+			"url": "http://localhost:9000/customers/100",
+			"time": 7,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Fail": true
+			},
+			"testPassFailCounts": {
+				"Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Fail": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 664,
+	"collection": {
+		"requests": [
+			{
+				"id": "56b2d2a0-4dbe-4009-8d24-99c186f8fe7f",
+				"method": "POST"
+			},
+			{
+				"id": "983dd6b9-8184-4327-ba0c-535393853a6e",
+				"method": "POST"
+			},
+			{
+				"id": "b5012be0-8806-4b89-83f7-29ec7d4490be",
+				"method": "GET"
+			},
+			{
+				"id": "b791d78f-883f-4e81-97fe-9cf4cb2041c3",
+				"method": "GET"
+			},
+			{
+				"id": "5cd9cc9d-71dc-49f7-85cd-da944522113d",
+				"method": "PUT"
+			},
+			{
+				"id": "2356eaf6-8ef1-4aa0-b4ec-8c52c2572b1e",
+				"method": "PUT"
+			},
+			{
+				"id": "5002354e-e5a7-4ab2-a917-73c179c3fa67",
+				"method": "PUT"
+			},
+			{
+				"id": "a694389d-952f-4199-bd14-64e979d9efe3",
+				"method": "PUT"
+			},
+			{
+				"id": "be0a230c-c8c7-4682-ad1c-e15f465e0a75",
+				"method": "PUT"
+			},
+			{
+				"id": "a2fed821-a1b3-4a60-802c-030a4dbc900f",
+				"method": "DELETE"
+			},
+			{
+				"id": "5c2f8188-9ea9-4420-a44d-472c97022811",
+				"method": "DELETE"
+			},
+			{
+				"id": "ded69c71-b938-41ce-8e82-da8bb533bff3",
+				"method": "POST"
+			},
+			{
+				"id": "5f3423bd-f803-4959-8880-c2fbf603f3aa",
+				"method": "POST"
+			},
+			{
+				"id": "ea6b55d4-b771-400d-99ae-d00bf46c69df",
+				"method": "GET"
+			},
+			{
+				"id": "7058da9e-ad15-41e5-9442-0a06066c6e6b",
+				"method": "GET"
+			},
+			{
+				"id": "632f3d32-8eff-4793-a7e7-9c82de8c3211",
+				"method": "PUT"
+			},
+			{
+				"id": "b1132dac-7f11-4784-9045-311fa3b0a388",
+				"method": "PUT"
+			},
+			{
+				"id": "8af601ad-c32e-4504-a45d-1f3a9c8dd31a",
+				"method": "PUT"
+			},
+			{
+				"id": "238dfcf0-c0a7-4815-9e24-f326bdd9d72f",
+				"method": "DELETE"
+			},
+			{
+				"id": "6e0171bd-2571-43d6-a151-30d62d770878",
+				"method": "DELETE"
+			}
+		]
+	}
+}
